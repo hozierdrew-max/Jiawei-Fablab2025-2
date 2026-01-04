@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
-    base: '/WebsiteTest1/',
+    base: '/Jiawei-Fablab2025-2/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
