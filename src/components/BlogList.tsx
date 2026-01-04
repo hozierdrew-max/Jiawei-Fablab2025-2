@@ -127,7 +127,10 @@ export default function BlogList({ posts, accentColor, onEdit, onDelete }: BlogL
             )}
             
             {/* Content */}
-            <div className="text-[rgba(200,200,200,0.95)] text-[18px] font-['Inter:Regular',sans-serif] leading-relaxed mb-6 whitespace-pre-wrap">
+            <div 
+              className="text-[rgba(200,200,200,0.95)] text-[18px] leading-relaxed mb-6 whitespace-pre-wrap"
+              style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+            >
               {post.content}
             </div>
 

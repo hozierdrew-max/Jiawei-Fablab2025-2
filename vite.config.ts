@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
-    base: '/WebsiteTest1/',
+    base: '/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -58,7 +58,7 @@
       outDir: 'dist',
     },
     server: {
-      port: 3000,
+      port: 5173,
       open: true,
     },
   });

@@ -6,7 +6,7 @@ import AssessmentPage from './components/AssessmentPage';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/play" element={<PlayPage />} />
