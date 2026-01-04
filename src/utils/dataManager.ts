@@ -78,15 +78,26 @@ export function importData(file: File): Promise<BlogPost[]> {
 
 // Load initial data from bundled JSON file (if exists)
 export async function loadInitialData(pageName: string): Promise<BlogPost[]> {
-  try {
-    // 兼容 GitHub Pages 子路径部署，使用相对路径
-    const response = await fetch(`data/${pageName.toLowerCase()}-data.json`);
-    if (response.ok) {
-      const data = await response.json();
-      return Array.isArray(data) ? data : data.posts || [];
+  const paths = [
+    `/WebsiteTest1/data/${pageName.toLowerCase()}-data.json`,
+    `./data/${pageName.toLowerCase()}-data.json`,
+    `/data/${pageName.toLowerCase()}-data.json`,
+  ];
+
+  for (const path of paths) {
+    try {
+      console.log(`Trying to load data from: ${path}`);
+      const response = await fetch(path);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(`Successfully loaded data from: ${path}`, data);
+        return Array.isArray(data) ? data : data.posts || [];
+      }
+    } catch (error) {
+      console.log(`Failed to load from ${path}:`, error);
     }
-  } catch (error) {
-    console.log(`No initial data found for ${pageName}`);
   }
+  
+  console.warn(`No initial data found for ${pageName} after trying all paths`);
   return [];
 }
