@@ -6,7 +6,7 @@ import AssessmentPage from './components/AssessmentPage';
 
 export default function App() {
   return (
-    <Router basename="/WebsiteTest1/">
+    <Router basename="/Jiawei-Fablab2025-2/">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/play" element={<PlayPage />} />

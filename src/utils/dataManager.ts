@@ -79,7 +79,7 @@ export function importData(file: File): Promise<BlogPost[]> {
 // Load initial data from bundled JSON file (if exists)
 export async function loadInitialData(pageName: string): Promise<BlogPost[]> {
   const paths = [
-    `/WebsiteTest1/data/${pageName.toLowerCase()}-data.json`,
+    `/Jiawei-Fablab2025-2/data/${pageName.toLowerCase()}-data.json`,
     `./data/${pageName.toLowerCase()}-data.json`,
     `/data/${pageName.toLowerCase()}-data.json`,
   ];
